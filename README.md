@@ -31,7 +31,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/ShowSeats.git
+   git clone https://github.com/DipanshuSehgal270/ShowSeats.git
    cd ShowSeats
 
 Create a MySQL database:
