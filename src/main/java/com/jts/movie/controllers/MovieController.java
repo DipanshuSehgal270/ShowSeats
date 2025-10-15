@@ -20,7 +20,6 @@ public class MovieController {
     private MovieService movieService;
 
 	@PostMapping("/addNew")
-    @PreAuthorize("hasRole('ADMIN)")
 	public ResponseEntity<String> addMovie(@RequestBody MovieRequest movieRequest) {
 		try {
             String result = movieService.addMovie(movieRequest);
