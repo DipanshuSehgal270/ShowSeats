@@ -35,6 +35,62 @@ public class Show {
 
     private Date date;
 
+    public Integer getShowId() {
+        return showId;
+    }
+
+    public void setShowId(Integer showId) {
+        this.showId = showId;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+
+    public Theater getTheater() {
+        return theater;
+    }
+
+    public void setTheater(Theater theater) {
+        this.theater = theater;
+    }
+
+    public List<ShowSeat> getShowSeatList() {
+        return showSeatList;
+    }
+
+    public void setShowSeatList(List<ShowSeat> showSeatList) {
+        this.showSeatList = showSeatList;
+    }
+
+    public List<Ticket> getTicketList() {
+        return ticketList;
+    }
+
+    public void setTicketList(List<Ticket> ticketList) {
+        this.ticketList = ticketList;
+    }
+
     @ManyToOne
     @JoinColumn
     private Movie movie;

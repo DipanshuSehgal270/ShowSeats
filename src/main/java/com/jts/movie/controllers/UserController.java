@@ -7,10 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.jts.movie.config.JWTService;
 import com.jts.movie.request.UserRequest;
@@ -39,13 +36,13 @@ public class UserController {
 		}
 	}
 
-	@PostMapping("/getToken")
+	@GetMapping("/getToken")
 	public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
 		Authentication authentication = authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
+				new UsernamePasswordAuthenticationToken(authRequest.getEmailId(), authRequest.getPassword()));
 
 		if (authentication.isAuthenticated()) {
-			return jwtService.generateToken(authRequest.getUsername());
+			return jwtService.generateToken(authRequest.getEmailId());
 		}
 
 		throw new UsernameNotFoundException("invalid user details.");

@@ -20,6 +20,38 @@ public class TheaterSeat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getSeatNo() {
+        return seatNo;
+    }
+
+    public void setSeatNo(String seatNo) {
+        this.seatNo = seatNo;
+    }
+
+    public SeatType getSeatType() {
+        return seatType;
+    }
+
+    public void setSeatType(SeatType seatType) {
+        this.seatType = seatType;
+    }
+
+    public Theater getTheater() {
+        return theater;
+    }
+
+    public void setTheater(Theater theater) {
+        this.theater = theater;
+    }
+
     private String seatNo;
 
     @Enumerated(value = EnumType.STRING)

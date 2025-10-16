@@ -18,7 +18,7 @@ import io.jsonwebtoken.security.Keys;
 public class JWTService {
 
 	@Value("${jwt.secret}")
-	private String SECRET;
+	private String SECRET ;
 	
 	public String extractUsername(String token) {
 		return extractClaim(token, Claims::getSubject);

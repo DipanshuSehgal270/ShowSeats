@@ -19,16 +19,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
 public class SecurityConfiguration {
 	
 	@Autowired
 	private JwtAuthFilter authFilter;
 
-	@Bean
-	UserDetailsService userDetailsService() {
-		return new UserInfoUserDetailsService();
-	}
+	@Autowired
+	private UserInfoUserDetailsService userInfoUserDetailsService;
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -48,7 +46,7 @@ public class SecurityConfiguration {
 	@Bean
 	AuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-		authenticationProvider.setUserDetailsService(userDetailsService());
+		authenticationProvider.setUserDetailsService(userInfoUserDetailsService);
 		authenticationProvider.setPasswordEncoder(passwordEncoder());
 		return authenticationProvider;
 	}
