@@ -8,6 +8,7 @@ import lombok.Data;
 public class UserRequest {
 
     private String name;
+    private String password;
     private Integer age;
     private String address;
     private String mobileNo;

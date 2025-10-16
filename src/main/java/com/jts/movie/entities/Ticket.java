@@ -23,6 +23,54 @@ public class Ticket {
 
 	private Integer totalTicketsPrice;
 
+	public Integer getTicketId() {
+		return ticketId;
+	}
+
+	public void setTicketId(Integer ticketId) {
+		this.ticketId = ticketId;
+	}
+
+	public Integer getTotalTicketsPrice() {
+		return totalTicketsPrice;
+	}
+
+	public void setTotalTicketsPrice(Integer totalTicketsPrice) {
+		this.totalTicketsPrice = totalTicketsPrice;
+	}
+
+	public String getBookedSeats() {
+		return bookedSeats;
+	}
+
+	public void setBookedSeats(String bookedSeats) {
+		this.bookedSeats = bookedSeats;
+	}
+
+	public Date getBookedAt() {
+		return bookedAt;
+	}
+
+	public void setBookedAt(Date bookedAt) {
+		this.bookedAt = bookedAt;
+	}
+
+	public Show getShow() {
+		return show;
+	}
+
+	public void setShow(Show show) {
+		this.show = show;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	private String bookedSeats;
 
 	@CreationTimestamp
